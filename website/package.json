@@ -1,0 +1,24 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "description": "Corporate website",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsc-watch --onSuccess 'node ./build/index.js'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "4.17.1",
+    "axios": "0.24.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/node": "^16.11.7",
+    "@types/axios": "0.14.0",
+    "ts-node": "^10.4.0",
+    "tsc-watch": "^4.5.0",
+    "typescript": "^4.4.4"
+  }
+}

@@ -1,0 +1,17 @@
+version: "3.5"
+
+services:
+  website:
+    image: node:16
+    working_dir: /app
+    env_file: .env
+    command: npm run dev
+    volumes:
+      - .:/app
+    ports:
+      - 3003:3003
+
+networks:
+  default:
+    external:
+      name: userbooknet

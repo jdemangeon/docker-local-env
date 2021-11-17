@@ -1,0 +1,47 @@
+version: "3.5"
+
+services:
+  api:
+    build: ./services/api
+    env_file: .env
+    environment:
+      PORT: 3000
+      RAILS_ENV: development
+    volumes:
+      - ./services/api:/app
+    ports:
+      - 3000:3000
+    depends_on:
+      - db
+
+  admin:
+    image: node:16
+    working_dir: /app
+    env_file: .env
+    environment:
+      - VITE_API_PUBLIC_BASE_URL=$API_PUBLIC_BASE_URL
+    command: npm run dev
+    volumes:
+      - ./services/admin:/app
+    ports:
+      - 3002:3002
+    depends_on:
+      - api
+
+  db:
+    image: postgres:12
+    restart: always
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    env_file: .env
+    ports:
+      - 5432:5432
+
+networks:
+  default:
+    external:
+      name: userbooknet
+
+volumes:
+  db-data:
+  exclude:
