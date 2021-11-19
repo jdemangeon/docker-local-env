@@ -37,11 +37,11 @@ services:
     ports:
       - 5432:5432
 
-networks:
-  default:
-    external:
-      name: userbooknet
-
 volumes:
   db-data:
   exclude:
+
+networks:
+  default:
+    external:
+      name: sharednetwork

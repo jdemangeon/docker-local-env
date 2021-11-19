@@ -1,0 +1,11 @@
+version: "3.5"
+
+services:
+  common_redis:
+    image: redis
+    container_name: common_redis
+
+networks:
+  default:
+    external:
+      name: sharednetwork
