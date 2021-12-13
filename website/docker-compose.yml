@@ -13,6 +13,8 @@ services:
       - dev.subdomain=website
     volumes:
       - .:/app
+    extra_hosts:
+      - "userbook_api.dev.local:${REVERSE_PROXY_IP}"
 
 networks:
   default:

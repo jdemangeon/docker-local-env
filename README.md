@@ -9,7 +9,7 @@ Just open the two projects in their own console.
 On `userbook`, just type `make install`. After install, type `make start db-migrate logs`
 On `website`, just type `make install start logs`
 
-Add the following lines into your `/etc/hosts` file.
+Add the following lines into your `/etc/hosts` file or use `.devstack/setup_dnsmasq.sh` (on mac) to setup hosts on `*.dev.local -> 127.0.0.1` globally.
 
 ```
 127.0.0.1 website.dev.local
