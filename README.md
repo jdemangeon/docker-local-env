@@ -9,8 +9,16 @@ Just open the two projects in their own console.
 On `userbook`, just type `make install`. After install, type `make start db-migrate logs`
 On `website`, just type `make install start logs`
 
+Add the following lines into your `/etc/hosts` file.
+
+```
+127.0.0.1 website.dev.local
+127.0.0.1 userbook_admin.dev.local
+127.0.0.1 userbook_api.dev.local
+```
+
 Then, you'll be able to:
 
-- See rails api on "http://localhost:3000/users"
-- See admin backoffice on "http://localhost:3002"
-- See the front website on "http://localhost:3003"
+- See rails api on "http://userbook_api.dev.local/users"
+- See admin backoffice on "http://userbook_admin.dev.local/#/users"
+- See the front website on "http://website.dev.local/"

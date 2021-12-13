@@ -6,10 +6,13 @@ services:
     working_dir: /app
     env_file: .env
     command: npm run dev
+    expose:
+      - 3000
+    labels:
+      - traefik.enable=true
+      - dev.subdomain=website
     volumes:
       - .:/app
-    ports:
-      - 3003:3003
 
 networks:
   default:
